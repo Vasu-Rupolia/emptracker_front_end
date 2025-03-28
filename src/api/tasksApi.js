@@ -2,8 +2,10 @@ import { baseUrl } from "../utils/baseUrl";
 
 export const getMyTasks = async () => {
     try {
-        const response = 
-        await fetch(`api/user/view_my_tasks`, {
+
+        const token = localStorage.getItem("token");
+        const response = await fetch(`http://localhost:8787/api/user/view_my_tasks`, {
+
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
